@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Route: /privacy -> privacy.html -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>[BRAND_NAME] — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for [BRAND_NAME] media player detailing our on-device data architecture.">
+  <link rel="canonical" href="https://example.com/privacy">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23D4AF37'/%3E%3Cpolygon%20points='12,9%2024,16%2012,23'%20fill='%23FFFFFF'/%3E%3C/svg%3E">
+  <style>
+    :root{
+      --background:#0D0F14; --card:#161922; --surface:#1E222D;
+      --text-primary:#EBEDF1; --text-secondary:#98A0AE;
+      --text-muted:#6B7280; --border:rgba(255,255,255,.10);
+      --accent:#D4AF37; --error:#FF334B;
+      --r-card:16px; --r-chip:12px; --r-btn:14px;
+      --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px;
+      --sp-6:24px; --sp-7:32px; --sp-8:48px; --sp-9:64px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{background-color:var(--background);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%;}
+    body{min-height:100vh;display:flex;flex-direction:column;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);line-height:1.6;}
+    a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .site-header{height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background-color:rgba(13,15,20,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:50;}
+    .header-inner{max-width:760px;height:100%;margin:0 auto;padding:0 var(--sp-5);display:flex;align-items:center;justify-content:space-between;}
+    @media (min-width:768px){.header-inner{padding:0 var(--sp-6);}}
+    .brand-link{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:16px;font-weight:600;color:var(--text-primary);min-height:44px;}
+    .brand-dot{width:8px;height:8px;border-radius:50%;background-color:var(--accent);display:inline-block;}
+    .nav-desk{display:none;align-items:center;gap:var(--sp-5);}
+    @media (min-width:768px){.nav-desk{display:flex;}}
+    .nav-link{font-size:13px;font-weight:500;color:var(--text-secondary);min-height:44px;display:inline-flex;align-items:center;}
+    .nav-link.active{color:var(--accent);font-weight:600;}
+    @media (hover:hover){.nav-link:hover{color:var(--text-primary);}}
+    .nav-toggle{display:block;position:relative;}
+    @media (min-width:768px){.nav-toggle{display:none;}}
+    .nav-summary{list-style:none;font-size:14px;color:var(--text-secondary);cursor:pointer;padding:var(--sp-2) var(--sp-3);border:1px solid var(--border);border-radius:var(--r-btn);display:flex;align-items:center;gap:var(--sp-1);min-height:44px;}
+    .nav-summary::-webkit-details-marker{display:none;}
+    .nav-menu{position:absolute;right:0;top:calc(100% + var(--sp-2));background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-2);min-width:180px;box-shadow:0 12px 32px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:var(--sp-1);z-index:60;}
+    .menu-item{font-size:13px;font-weight:500;color:var(--text-secondary);padding:var(--sp-3) var(--sp-4);border-radius:var(--r-chip);min-height:44px;display:flex;align-items:center;}
+    .menu-item.active{color:var(--accent);font-weight:600;background:var(--surface);}
+    main{flex:1;max-width:760px;width:100%;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-9);}
+    @media (min-width:768px){main{padding:var(--sp-8) var(--sp-6) var(--sp-9);}}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:var(--sp-2);}
+    .page-title{font-size:clamp(24px,5vw,32px);font-weight:700;letter-spacing:-0.5px;color:var(--text-primary);margin-bottom:var(--sp-2);}
+    .meta-date{font-size:12px;color:var(--text-secondary);margin-bottom:var(--sp-6);}
+    .tldr-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-5);margin-bottom:var(--sp-7);animation:fadeUp 300ms ease-out;}
+    .tldr-title{font-size:16px;font-weight:600;color:var(--accent);margin-bottom:var(--sp-3);display:flex;align-items:center;gap:var(--sp-2);}
+    .tldr-list{list-style:none;display:flex;flex-direction:column;gap:var(--sp-2);padding:0;}
+    .tldr-list li{font-size:15px;color:var(--text-primary);padding-left:var(--sp-4);position:relative;}
+    .tldr-list li::before{content:"•";position:absolute;left:0;color:var(--accent);}
+    .legal-content{display:flex;flex-direction:column;gap:var(--sp-7);}
+    .legal-section{display:flex;flex-direction:column;gap:var(--sp-3);}
+    .section-title{font-size:20px;font-weight:600;letter-spacing:-0.2px;color:var(--text-primary);}
+    .body-p{font-size:15px;color:var(--text-primary);line-height:1.6;max-width:68ch;}
+    .body-p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .legal-list{margin-left:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-2);max-width:68ch;}
+    .legal-list li{font-size:15px;color:var(--text-primary);line-height:1.6;}
+    .site-footer{border-top:1px solid var(--border);padding:var(--sp-6) var(--sp-5) var(--sp-8);background:var(--background);}
+    .footer-inner{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:var(--sp-4);}
+    .footer-nav{display:flex;flex-wrap:wrap;gap:var(--sp-4);}
+    .footer-link{font-size:13px;color:var(--text-secondary);min-height:44px;display:inline-flex;align-items:center;}
+    @media (hover:hover){.footer-link:hover{color:var(--text-primary);}}
+    .footer-copy{font-size:12px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:space-between;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+    @media print{body{background:#fff!important;color:#000!important;}header,footer,.nav-toggle{display:none!important;}a{text-decoration:none!important;color:#000!important;}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="about.html" class="brand-link">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>[BRAND_NAME]</span>
+      </a>
+      <nav class="nav-desk" aria-label="Main Navigation">
+        <a href="terms.html" class="nav-link">Terms</a>
+        <a href="privacy.html" class="nav-link active">Privacy</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <details class="nav-toggle">
+        <summary class="nav-summary">
+          <span>Menu</span>
+          <span aria-hidden="true">▾</span>
+        </summary>
+        <nav class="nav-menu" aria-label="Mobile Navigation">
+          <a href="terms.html" class="menu-item">Terms of Service</a>
+          <a href="privacy.html" class="menu-item active">Privacy Policy</a>
+          <a href="support.html" class="menu-item">Support</a>
+          <a href="contact.html" class="menu-item">Contact</a>
+          <a href="about.html" class="menu-item">About</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Legal</div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <div class="meta-date">Last updated: 2026-11-12</div>
+
+    <section class="tldr-card" aria-label="Summary of Privacy Policy">
+      <div class="tldr-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>At a Glance (TL;DR)</span>
+      </div>
+      <ul class="tldr-list">
+        <li>Your playlists, stream URLs, server credentials, and watch history never leave your device.</li>
+        <li>We operate zero user tracking databases, host no external user accounts, and sell no personal data.</li>
+        <li>In-app purchases and subscription billing are handled exclusively by Apple Inc.</li>
+        <li>You maintain full control and can delete all local application data directly in Settings.</li>
+      </ul>
+    </section>
+
+    <div class="legal-content">
+      <section class="legal-section">
+        <h2 class="section-title">1. Overview</h2>
+        <p class="body-p">Your playlists and viewing preferences never leave your device. [BRAND_NAME] is engineered from the ground up on a local-first privacy model. We do not require you to create an account with us to use the player, nor do we operate central backend servers that log your browsing behavior or stream consumption.</p>
+        <p class="body-p">This Privacy Policy explains how [LEGAL_ENTITY] (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) handles information in connection with your use of the [BRAND_NAME] application across supported Apple platforms.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">2. Information We Do NOT Collect</h2>
+        <p class="body-p">Because [BRAND_NAME] functions as a standalone client playback engine, the following user content and sensitive data are strictly processed and stored locally on your device:</p>
+        <ul class="legal-list">
+          <li><strong>Playlist Credentials &amp; URLs:</strong> We do not collect, transmit, store, or inspect your M3U playlist URLs, Xtream Codes credentials (username, password, server address), or custom stream addresses.</li>
+          <li><strong>Playback &amp; Viewing History:</strong> We do not log what channels you watch, what movies or series you stream, your playback timestamps, or your viewing durations.</li>
+          <li><strong>Personal Identity:</strong> We do not collect your name, physical address, email address (unless you voluntarily contact our support team), or phone number.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">3. Information Collected</h2>
+        <p class="body-p">Depending on your device configuration and the optional features you utilize, the following categories of data may be processed:</p>
+        <ul class="legal-list">
+          <li><strong>In-App Purchases &amp; Subscriptions:</strong> When you purchase an optional Pro subscription, the transaction is processed directly by Apple Inc. through StoreKit. We receive only an anonymous transaction receipt or status token to unlock premium features locally. We never receive or store your credit card or financial account numbers.</li>
+          <li><strong>Advertising Identifiers (If Ads are Enabled):</strong> If you use the free, ad-supported tier of the app, Google AdMob and Apple's App Tracking Transparency (ATT) framework may request permission to use your device Identifier for Advertisers (IDFA) to deliver personalized ads. If you deny tracking, only contextual or non-personalized advertisements are displayed.</li>
+          <li><strong>Technical Diagnostics &amp; Crash Data:</strong> With your permission via standard Apple diagnostic sharing, anonymous crash reports, system operating version, device model, and playback engine error logs may be collected solely to diagnose bugs and improve app stability.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">4. How We Use Information</h2>
+        <p class="body-p">Any information processed through your use of [BRAND_NAME] is utilized solely for the following limited purposes:</p>
+        <ul class="legal-list">
+          <li>To verify and restore your active Pro subscription status across your Apple devices.</li>
+          <li>To maintain, optimize, and improve the performance, stability, and hardware-accelerated playback of the application.</li>
+          <li>To respond promptly to customer support requests and bug reports initiated by you via email.</li>
+          <li>To serve advertisements in compliance with privacy regulations where you have selected the ad-supported tier.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">5. Third-Party Services &amp; Disclosures</h2>
+        <p class="body-p">We do not sell, rent, or trade your personal data to third parties. We interact only with vetted platform partners strictly necessary to operate the application:</p>
+        <ul class="legal-list">
+          <li><strong>Apple Inc.:</strong> Processes in-app purchases, StoreKit transactions, App Store distribution, and optional anonymous crash reporting.</li>
+          <li><strong>RevenueCat:</strong> Provides subscription validation infrastructure to verify active Pro entitlements using anonymous App User IDs.</li>
+          <li><strong>Google AdMob:</strong> Serves banner, interstitial, and open-app advertisements in the free tier in accordance with Google&rsquo;s privacy disclosures and your ATT consent settings.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">6. Data Retention &amp; Security</h2>
+        <p class="body-p">All local application data—including saved playlist profiles, parental control PINs, cached channel listings, and favorites—is stored within your device&rsquo;s secure sandboxed storage. Sensitive server credentials are protected using Apple&rsquo;s hardware-backed Keychain encryption.</p>
+        <p class="body-p">Because we maintain no remote user account database, you can permanently delete all local data, playlists, and settings at any time by going to Settings &gt; Clear All Data, or by uninstalling the app from your device.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">7. Your Rights (GDPR &amp; CCPA)</h2>
+        <p class="body-p">Under the General Data Protection Regulation (GDPR), California Consumer Privacy Act (CCPA), and similar privacy laws worldwide, you possess distinct rights regarding your personal data:</p>
+        <ul class="legal-list">
+          <li><strong>Right to Access &amp; Portability:</strong> All playlist and viewing data is held locally on your device and can be viewed or exported directly through the application interface.</li>
+          <li><strong>Right to Deletion:</strong> You can delete all your stored data instantly using in-app settings or by deleting the app.</li>
+          <li><strong>Right to Withdraw Consent:</strong> You can withdraw ad tracking consent at any time in iOS Settings &gt; Privacy &amp; Security &gt; Tracking &gt; [BRAND_NAME].</li>
+        </ul>
+        <p class="body-p">If you have questions regarding your privacy rights or wish to exercise them, you may contact us at <a href="mailto:[SUPPORT_EMAIL]">[SUPPORT_EMAIL]</a>.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">8. Children&rsquo;s Privacy</h2>
+        <p class="body-p">[BRAND_NAME] is not directed to children under the age of thirteen (13), and we do not knowingly collect personal data from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at <a href="mailto:[SUPPORT_EMAIL]">[SUPPORT_EMAIL]</a> so that we may take appropriate steps to delete it.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">9. Changes to This Privacy Policy</h2>
+        <p class="body-p">We may update this Privacy Policy from time to time to reflect changes in our practices or applicable legal requirements. The updated version will be indicated by the &ldquo;Last updated&rdquo; date at the top of this page. We encourage you to review this page periodically to stay informed about how we safeguard your privacy.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2 class="section-title">10. Contact Us</h2>
+        <p class="body-p">If you have any questions, comments, or concerns about this Privacy Policy or our data practices, please reach out to us at <a href="mailto:[SUPPORT_EMAIL]">[SUPPORT_EMAIL]</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="support.html" class="footer-link">Support Center</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="about.html" class="footer-link">About Us</a>
+      </nav>
+      <div class="footer-copy">
+        <span>&copy; 2026 [LEGAL_ENTITY]. All rights reserved.</span>
+        <span>Last updated: 2026-11-12</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
