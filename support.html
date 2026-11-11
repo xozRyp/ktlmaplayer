@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Route: /support -> support.html -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>[BRAND_NAME] — Support Center</title>
+  <meta name="description" content="Official customer support, setup guides, and troubleshooting FAQ for [BRAND_NAME].">
+  <link rel="canonical" href="https://example.com/support">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23D4AF37'/%3E%3Cpolygon%20points='12,9%2024,16%2012,23'%20fill='%23FFFFFF'/%3E%3C/svg%3E">
+  <style>
+    :root{
+      --background:#0D0F14; --card:#161922; --surface:#1E222D;
+      --text-primary:#EBEDF1; --text-secondary:#98A0AE;
+      --text-muted:#6B7280; --border:rgba(255,255,255,.10);
+      --accent:#D4AF37; --error:#FF334B;
+      --r-card:16px; --r-chip:12px; --r-btn:14px;
+      --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px;
+      --sp-6:24px; --sp-7:32px; --sp-8:48px; --sp-9:64px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{background-color:var(--background);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%;}
+    body{min-height:100vh;display:flex;flex-direction:column;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);line-height:1.6;}
+    a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .site-header{height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background-color:rgba(13,15,20,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:50;}
+    .header-inner{max-width:760px;height:100%;margin:0 auto;padding:0 var(--sp-5);display:flex;align-items:center;justify-content:space-between;}
+    @media (min-width:768px){.header-inner{padding:0 var(--sp-6);}}
+    .brand-link{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:16px;font-weight:600;color:var(--text-primary);min-height:44px;}
+    .brand-dot{width:8px;height:8px;border-radius:50%;background-color:var(--accent);display:inline-block;}
+    .nav-desk{display:none;align-items:center;gap:var(--sp-5);}
+    @media (min-width:768px){.nav-desk{display:flex;}}
+    .nav-link{font-size:13px;font-weight:500;color:var(--text-secondary);min-height:44px;display:inline-flex;align-items:center;}
+    .nav-link.active{color:var(--accent);font-weight:600;}
+    @media (hover:hover){.nav-link:hover{color:var(--text-primary);}}
+    .nav-toggle{display:block;position:relative;}
+    @media (min-width:768px){.nav-toggle{display:none;}}
+    .nav-summary{list-style:none;font-size:14px;color:var(--text-secondary);cursor:pointer;padding:var(--sp-2) var(--sp-3);border:1px solid var(--border);border-radius:var(--r-btn);display:flex;align-items:center;gap:var(--sp-1);min-height:44px;}
+    .nav-summary::-webkit-details-marker{display:none;}
+    .nav-menu{position:absolute;right:0;top:calc(100% + var(--sp-2));background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-2);min-width:180px;box-shadow:0 12px 32px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:var(--sp-1);z-index:60;}
+    .menu-item{font-size:13px;font-weight:500;color:var(--text-secondary);padding:var(--sp-3) var(--sp-4);border-radius:var(--r-chip);min-height:44px;display:flex;align-items:center;}
+    .menu-item.active{color:var(--accent);font-weight:600;background:var(--surface);}
+    main{flex:1;max-width:760px;width:100%;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-9);}
+    @media (min-width:768px){main{padding:var(--sp-8) var(--sp-6) var(--sp-9);}}
+    .eyebrow{font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:var(--sp-2);}
+    .page-title{font-size:clamp(24px,5vw,32px);font-weight:700;letter-spacing:-0.5px;color:var(--text-primary);margin-bottom:var(--sp-2);}
+    .lead-text{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:var(--sp-7);max-width:68ch;}
+    .topic-grid{display:grid;grid-template-columns:1fr;gap:var(--sp-4);margin-bottom:var(--sp-8);}
+    @media (min-width:640px){.topic-grid{grid-template-columns:repeat(3,1fr);}}
+    .topic-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-3);animation:fadeUp 300ms ease-out;}
+    .icon-chip{width:48px;height:48px;border-radius:var(--r-chip);background:rgba(212,175,55,.12);display:flex;align-items:center;justify-content:center;color:var(--accent);}
+    .topic-title{font-size:16px;font-weight:600;color:var(--text-primary);}
+    .topic-desc{font-size:13px;color:var(--text-secondary);line-height:1.5;}
+    .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-5);}
+    .section-title{font-size:20px;font-weight:600;letter-spacing:-0.2px;color:var(--text-primary);}
+    .faq-stack{display:flex;flex-direction:column;gap:var(--sp-3);margin-bottom:var(--sp-8);}
+    .faq-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-4);transition:border-color .2s ease;}
+    .faq-card[open]{border-color:rgba(212,175,55,.4);}
+    .faq-summary{list-style:none;font-size:16px;font-weight:500;color:var(--text-primary);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);min-height:44px;}
+    .faq-summary::-webkit-details-marker{display:none;}
+    .faq-indicator{font-size:20px;font-weight:400;color:var(--accent);line-height:1;transition:transform .2s ease;display:inline-block;width:20px;text-align:center;}
+    .faq-card[open] .faq-indicator{transform:rotate(45deg);}
+    .faq-content{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--border);max-width:68ch;}
+    .faq-content strong{color:var(--text-primary);}
+    .faq-content a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .response-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-6);display:flex;flex-direction:column;gap:var(--sp-4);margin-bottom:var(--sp-7);animation:fadeUp 300ms ease-out;}
+    @media (min-width:640px){.response-card{flex-direction:row;align-items:center;justify-content:space-between;}}
+    .response-meta{display:flex;flex-direction:column;gap:var(--sp-2);max-width:440px;}
+    .response-title{font-size:18px;font-weight:600;color:var(--text-primary);}
+    .response-desc{font-size:14px;color:var(--text-secondary);line-height:1.5;}
+    .btn-gold{background:var(--accent);color:var(--background);font-size:16px;font-weight:600;padding:14px 24px;border-radius:var(--r-btn);display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);min-height:44px;white-space:nowrap;}
+    @media (hover:hover){.btn-gold:hover{opacity:.9;}}
+    .sys-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-3);}
+    .sys-title{font-size:15px;font-weight:600;color:var(--text-primary);}
+    .sys-list{list-style:none;display:flex;flex-direction:column;gap:var(--sp-2);padding:0;}
+    .sys-list li{font-size:13px;color:var(--text-secondary);display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:var(--sp-2);}
+    .sys-list li:last-child{border-bottom:none;padding-bottom:0;}
+    .site-footer{border-top:1px solid var(--border);padding:var(--sp-6) var(--sp-5) var(--sp-8);background:var(--background);}
+    .footer-inner{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:var(--sp-4);}
+    .footer-nav{display:flex;flex-wrap:wrap;gap:var(--sp-4);}
+    .footer-link{font-size:13px;color:var(--text-secondary);min-height:44px;display:inline-flex;align-items:center;}
+    @media (hover:hover){.footer-link:hover{color:var(--text-primary);}}
+    .footer-copy{font-size:12px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:space-between;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="about.html" class="brand-link">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>[BRAND_NAME]</span>
+      </a>
+      <nav class="nav-desk" aria-label="Main Navigation">
+        <a href="terms.html" class="nav-link">Terms</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+        <a href="support.html" class="nav-link active">Support</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <details class="nav-toggle">
+        <summary class="nav-summary">
+          <span>Menu</span>
+          <span aria-hidden="true">▾</span>
+        </summary>
+        <nav class="nav-menu" aria-label="Mobile Navigation">
+          <a href="terms.html" class="menu-item">Terms of Service</a>
+          <a href="privacy.html" class="menu-item">Privacy Policy</a>
+          <a href="support.html" class="menu-item active">Support</a>
+          <a href="contact.html" class="menu-item">Contact</a>
+          <a href="about.html" class="menu-item">About</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Support</div>
+    <h1 class="page-title">Support Center</h1>
+    <p class="lead-text">Find answers to common configuration questions, troubleshooting steps for local playlists, and billing assistance.</p>
+
+    <div class="topic-grid">
+      <section class="topic-card">
+        <div class="icon-chip" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <h2 class="topic-title">Getting Started</h2>
+        <p class="topic-desc">Learn how to import M3U URLs, configure Xtream Codes profiles, and sync favorites.</p>
+      </section>
+
+      <section class="topic-card">
+        <div class="icon-chip" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        </div>
+        <h2 class="topic-title">Playback &amp; Hardware</h2>
+        <p class="topic-desc">Troubleshoot video buffering, audio synchronization, hardware decoding, and subtitle styling.</p>
+      </section>
+
+      <section class="topic-card">
+        <div class="icon-chip" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        </div>
+        <h2 class="topic-title">Billing &amp; Apple ID</h2>
+        <p class="topic-desc">Manage Pro Pass entitlements, auto-renewal settings, and App Store restore purchases.</p>
+      </section>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-stack">
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>How do I add an M3U or Xtream Codes playlist?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          To add your playlist, open <strong>[BRAND_NAME]</strong> and tap the <strong>+</strong> icon on the home screen or navigate to <strong>Profiles &gt; Add Source</strong>. You can choose either <em>M3U Playlist URL</em> or <em>Xtream Codes API</em>. Enter your provider URL, credentials (if using Xtream), and choose an optional profile nickname. The app will parse and organize your live channels, movies, and series locally.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>Why is my playlist not loading or showing an error?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          Most playlist loading issues stem from a typo in the URL or temporary server downtime at your provider. Verify that your M3U URL or Xtream server address begins with <code>http://</code> or <code>https://</code> and contains no spaces. If your server uses plain HTTP, ensure your connection allows local network media requests. You can also re-add the profile to refresh your cached index.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>How can I reduce buffering or stream stutter?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          If streams stutter or buffer frequently:
+          <br>1. Check your Wi-Fi or cellular bandwidth speed.
+          <br>2. Open player settings during playback and switch the rendering engine between <strong>Hardware Acceleration</strong> and <strong>Software Compatibility Mode</strong>.
+          <br>3. Verify that your provider stream bandwidth matches your available connection.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>Why is my Electronic Program Guide (EPG) missing or out of sync?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          EPG program listings are provided directly by your third-party playlist provider via XMLTV. If program schedules are blank or offset, check your device time zone in iOS Settings, and ensure your provider includes active <code>tvg-id</code> tags for your channel lineup. You can force-refresh the guide in <strong>Settings &gt; Refresh TV Guide</strong>.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>How do I reset my Parental Control PIN?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          If you have forgotten your 4-digit parental control PIN, navigate to <strong>Settings &gt; Parental Controls</strong> and select <em>Reset Security PIN</em>. If access is locked, you can clear local application security preferences by removing and re-adding your profile in the workspace manager.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>Why is Catch-Up replay not working on some channels?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          Catch-Up replay availability depends entirely on whether your playlist provider archives broadcast streams and supports Xtream Catch-Up or archive stream headers (such as <code>timeshift</code>). If a channel lacks catch-up indicators in the program guide, your provider does not support replay on that stream.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>How do subscriptions, renewals, and refunds work?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          All subscriptions and in-app purchases are securely processed by Apple Inc. through your Apple ID account:
+          <br>• <strong>Auto-Renewal:</strong> Subscriptions automatically renew unless cancelled at least 24 hours prior to the end of the billing period.
+          <br>• <strong>Cancellation:</strong> You can cancel your subscription at any time in your iOS Settings (or App Store) &gt; [BRAND_NAME] &gt; Subscriptions.
+          <br>• <strong>Refunds:</strong> Refund requests are managed exclusively by Apple Inc. at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+          <br>• <strong>Restore:</strong> If you reinstall the app or change devices, tap <em>Restore Purchases</em> at the bottom of the Pro screen to restore your active access.
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-summary">
+          <span>What are the device and operating system requirements?</span>
+          <span class="faq-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq-content">
+          [BRAND_NAME] requires a recent iOS version on iPhone and iPod touch, iPadOS on iPad, or macOS on Apple Silicon Macs. A persistent internet connection is required to fetch and stream your playlists.
+        </div>
+      </details>
+    </div>
+
+    <section class="response-card" aria-label="Direct Support Contact">
+      <div class="response-meta">
+        <h2 class="response-title">Need individual assistance?</h2>
+        <p class="response-desc">Our technical support team is standing by to help with playback setup, format questions, and bug reports. We reply to all inquiries within 24&ndash;48 hours.</p>
+      </div>
+      <div>
+        <a href="mailto:[SUPPORT_EMAIL]" class="btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Email Support</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="sys-card" aria-label="System Specifications">
+      <h2 class="sys-title">Platform &amp; Format Specifications</h2>
+      <ul class="sys-list">
+        <li><span>Supported Protocols</span><span>HLS (.m3u8), TS (.ts), MP4, MKV</span></li>
+        <li><span>Supported Playlists</span><span>M3U / M3U8, Xtream Codes API</span></li>
+        <li><span>Audio Capabilities</span><span>Multi-Track AAC, AC3, EAC3, MP3</span></li>
+        <li><span>Video Decoding</span><span>Apple VideoToolbox HW Acceleration</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="support.html" class="footer-link">Support Center</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="about.html" class="footer-link">About Us</a>
+      </nav>
+      <div class="footer-copy">
+        <span>&copy; 2026 [LEGAL_ENTITY]. All rights reserved.</span>
+        <span>Last updated: 2026-11-12</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
