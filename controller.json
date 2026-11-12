@@ -9,7 +9,7 @@
   },
   
   "features": {
-    "demo": false
+    "demo": true
   },
   "ads": {
     "enabled": false,
