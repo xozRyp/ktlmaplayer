@@ -1,0 +1,104 @@
+{
+  "app": {
+    "enabled": true,
+    "forceUpdate": false,
+    "maintenanceMessage": "We're updating the app. Please try again later.",
+    "updateMessage": "A new version is available. Please update to continue.",
+    "appStoreUrl": "https://apps.apple.com/app/idXXXXXX",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.yourapp"
+  },
+  
+  "features": {
+    "demo": false
+  },
+  "ads": {
+    "enabled": false,
+    "showPrivacySettings": true,
+    "adUnits": {
+      "banner": "ca-app-pub-3940256099942544/6300978111",
+      "interstitial": "ca-app-pub-3940256099942544/1033173712",
+      "rewarded": "ca-app-pub-3940256099942544/5224354917",
+      "native": "ca-app-pub-3940256099942544/2247696110",
+      "appOpen": "ca-app-pub-3940256099942544/9257395921"
+    },
+    "nativeAdMenuEnabled": true,
+    "nativeAdWelcomeEnabled": true,
+    "nativeAdAccountsEnabled": true,
+    "timing": {
+      "interstitialMinInterval": 0,
+      "appOpenMinInterval": 30,
+      "appOpenMaxAgeHours": 4,
+      "appOpenMinBackgroundTime": 30,
+      "minBackgroundSecondsForResume": 5,
+      "maxAdLoadRetries": 3,
+      "adLoadRetryDelay": 5
+    },
+    "actionsBeforeInterstitial": {
+      "live": 5,
+      "movie": 5,
+      "series": 5,
+      "favorites": 5,
+      "category": 5,
+      "watching": 5,
+      "search": 5,
+      "settings": 5,
+      "onboarding": 5
+    }
+  },
+  "pages": {
+    "onboarding": true,
+    "gettingStarted": false
+    
+  },
+  "subscription": {
+    "enabled": true,
+    "paywallOnLaunch": false,
+    "vodLocked": false,
+    "moviesLocked": false,
+    "seriesLocked": false,
+    "liveTvLocked": false,
+    "qualityUpgradeEnabled": true,
+    "gettingStarted": {
+      "liveTvLocked": true,
+      "moviesLocked": true,
+      "seriesLocked": true
+    }
+  },
+  "dialogs": {
+    "disclaimer": {
+      "enabled": true,
+      "title": "Welcome to {appName}",
+      "body": [
+        "{appName} is your premium media player — designed to deliver the best streaming experience with your own playlists and content sources.",
+        "You're in full control. Add your playlists and enjoy cinema-quality playback, smart guides, and powerful features. Please ensure you have the right to access any content you stream."
+      ],
+      "buttonText": "Let's Go"
+    },
+    "proPlayerConfirmation": {
+      "enabled": true,
+      "title": "Go Pro",
+      "features": [
+        "Cinema-quality HD & 4K experience",
+        "Smart TV guide with catch-up",
+        "Stream across all your devices",
+        "Compatible with your playlists"
+      ],
+      "disclaimer": "Pro unlocks the full player experience — bring your favorite playlists and enjoy premium playback.",
+      "cancelButton": "Not Now",
+      "ctaButton": "Explore Pro"
+    },
+    "unlockPremium": {
+      "enabled": true,
+      "title": "Your Premium Player",
+      "subtitle": "Add your playlist and start watching instantly",
+      "features": [
+        "Stunning HD & 4K Playback",
+        "Live TV Guide & Catch-Up",
+        "Smart Favorites & Quick Access",
+        "Stream on Any Device"
+      ],
+      "laterButton": "Maybe Later",
+      "ctaButton": "Get Started"
+    }
+  }
+}
