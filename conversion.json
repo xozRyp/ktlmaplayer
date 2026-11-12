@@ -1,0 +1,155 @@
+{
+  "enabled": false
+  "lockMode": "hard",
+  "softLockThreshold": 2,
+  "sectionOrder": ["live", "movies", "series"],
+  "sectionsVisibility": {
+    "live": true,
+    "movies": true,
+    "series": true
+  },
+  "sectionsLocked": {
+    "live": true,
+    "movies": true,
+    "series": true
+  },
+  "copy": {
+    "eyebrow": "PRIVATE SCREENING ROOM",
+    "headline": "Every Live Broadcast, Cinema Premiere & Series in One Atelier",
+    "subheadline": "Explore curated 4K channels, on-demand films, and multi-season series—or connect your own provider in seconds.",
+    "unlockCtaLabel": "Unlock Full Studio Pass",
+    "unlockCtaSubtitle": "4K HDR Playback • 7-Day Catch-Up Replay • Picture-in-Picture • Ad-Free",
+    "unlockCtaBadge": "4K HDR  •  7-Day Catch-Up  •  PiP  •  Ad-Free",
+    "connectCtaLabel": "Connect Your Provider or Playlist",
+    "sampleCtaLabel": "Preview Open Sample Library",
+    "softLockSheetText": "Unlock 4K live channels, cinema premieres, and ad-free playback for {title}."
+  },
+  "categories": {
+    "live": [
+      {
+        "id": "live_sports",
+        "title": "Live Sports & Global Arenas",
+        "caption": "Low-Latency Engine • Sub-500ms Channel Zap",
+        "shortBenefit": "Sub-500ms Instant Zap",
+        "tag": "LIVE EPG",
+        "icon": "sports_soccer",
+        "accent": "#D9A441",
+        "showLock": true
+      },
+      {
+        "id": "live_4k",
+        "title": "4K Showcase & Live Broadcasts",
+        "caption": "{count} Live Streams Ready • Picture-in-Picture",
+        "shortBenefit": "{count} Channels • PiP Mode",
+        "tag": "4K UHD",
+        "icon": "live_tv",
+        "accent": "#E5B454",
+        "showLock": true
+      },
+      {
+        "id": "live_news",
+        "title": "24/7 World News & Financial Desks",
+        "caption": "Interactive TV Guide • 7-Day Catch-Up Replay",
+        "shortBenefit": "7-Day Catch-Up Replay",
+        "tag": "REPLAY",
+        "icon": "newspaper",
+        "accent": "#C8C2B4",
+        "showLock": true
+      },
+      {
+        "id": "live_intl",
+        "title": "International Entertainment & Music",
+        "caption": "Multi-Audio Tracks • Background Audio Mode",
+        "shortBenefit": "Multi-Audio • Background",
+        "tag": "GLOBAL",
+        "icon": "graphic_eq",
+        "accent": "#C98A4B",
+        "showLock": true
+      }
+    ],
+    "movies": [
+      {
+        "id": "mov_4k",
+        "title": "4K Cinema Premieres & Action",
+        "caption": "Hardware HDR Decoding • Custom Subtitles",
+        "shortBenefit": "HDR10+ • Custom Subtitles",
+        "tag": "4K UHD",
+        "icon": "local_movies",
+        "accent": "#D9A441",
+        "showLock": true
+      },
+      {
+        "id": "mov_open",
+        "title": "Open Cinema Originals",
+        "caption": "{count} Curated Films Ready • Instant Resume",
+        "shortBenefit": "{count} Films • Instant Resume",
+        "tag": "NEW",
+        "icon": "movie_filter",
+        "accent": "#E5B454",
+        "showLock": true
+      },
+      {
+        "id": "mov_scifi",
+        "title": "Sci-Fi, Thriller & World Cinema",
+        "caption": "Multi-Track Audio • Night Dialogue Boost",
+        "shortBenefit": "Multi-Audio • Night Boost",
+        "tag": "AUDIO+",
+        "icon": "auto_awesome",
+        "accent": "#C8C2B4",
+        "showLock": true
+      },
+      {
+        "id": "mov_family",
+        "title": "Animation & Family Screening Room",
+        "caption": "4-Digit PIN Lock • Ad-Free Playback",
+        "shortBenefit": "Family PIN • Ad-Free",
+        "tag": "SAFE",
+        "icon": "family_restroom",
+        "accent": "#C98A4B",
+        "showLock": true
+      }
+    ],
+    "series": [
+      {
+        "id": "ser_drama",
+        "title": "Prestige Drama & Crime Anthologies",
+        "caption": "Auto-Next Episode • Cross-Session Sync",
+        "shortBenefit": "Auto-Next • Cloud Sync",
+        "tag": "NEW",
+        "icon": "theaters",
+        "accent": "#D9A441",
+        "showLock": true
+      },
+      {
+        "id": "ser_scifi",
+        "title": "Sci-Fi & Studio Series Archive",
+        "caption": "{count} Series Ready • One-Tap Skip Intro",
+        "shortBenefit": "{count} Series • Skip Intro",
+        "tag": "4K UHD",
+        "icon": "video_library",
+        "accent": "#E5B454",
+        "showLock": true
+      },
+      {
+        "id": "ser_doc",
+        "title": "Global Docuseries & History",
+        "caption": "Multi-Language Subtitles • Variable Speed",
+        "shortBenefit": "Subtitles • Pro Speed",
+        "tag": "DOCS",
+        "icon": "public",
+        "accent": "#C8C2B4",
+        "showLock": true
+      },
+      {
+        "id": "ser_comedy",
+        "title": "Binge-Ready Comedy & Classics",
+        "caption": "Instant Season Switching • Sleep Timer",
+        "shortBenefit": "Fast Seasons • Sleep Timer",
+        "tag": "BINGE",
+        "icon": "stars",
+        "accent": "#C98A4B",
+        "showLock": true
+      }
+    ]
+  }
+}
