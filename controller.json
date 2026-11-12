@@ -53,9 +53,9 @@
   "subscription": {
     "enabled": true,
     "paywallOnLaunch": false,
-    "vodLocked": false,
-    "moviesLocked": false,
-    "seriesLocked": false,
+    "vodLocked": true,
+    "moviesLocked": true,
+    "seriesLocked": true,
     "liveTvLocked": false,
     "qualityUpgradeEnabled": true,
     "gettingStarted": {
