@@ -1,0 +1,115 @@
+
+{
+  "version": "1.0",
+  "customizedPaywall": false,
+  "media": {
+    "type": "image",
+    "url": "",
+    "fallbackUrl": "assets/images/subscription/premium_backdrop.png"
+  },
+  "texts": {
+    "badge": "TTAPPNAME PRO",
+    "title": "Unlock Premium\nStreaming",
+    "subtitle": "Join thousands of users who upgraded",
+    "ctaButton": {
+      "weekly": "Subscribe Now",
+      "monthly": "Subscribe Now",
+      "yearly": "Subscribe Now",
+      "lifetime": "Get Lifetime Access",
+      "default": "Continue"
+    },
+    "restoreButton": "Restore Purchases",
+    "cancelAnytime": "Cancel anytime. No questions asked.",
+    "loadingPlans": "Loading exclusive offers...",
+    "processingPurchase": "Unlocking Pro...",
+    "successTitle": "Welcome to Pro! 🎉",
+    "successMessage": "You now have unlimited access to all premium features!",
+    "successButton": "Start Streaming",
+    "activeTitle": "You're a Pro! 🎉",
+    "errorTitle": "Unable to load plans",
+    "errorMessage": "Please check your connection and try again",
+    "retryButton": "Try Again"
+  },
+  "urgency": {
+    "enabled": true,
+    "title": "🔥 LIMITED TIME OFFER",
+    "subtitle": "Special pricing ends in:",
+    "timerMinutes": 15
+  },
+  "socialProof": {
+    "enabled": true,
+    "userCount": "25,000+",
+    "userCountLabel": "happy users",
+    "rating": "4.8",
+    "ratingCount": "1.2K ratings",
+    "testimonials": [
+      {
+        "text": "Best IPTV player I've ever used!",
+        "author": "Alex M.",
+        "avatar": "A"
+      },
+      {
+        "text": "Worth every penny. No ads is amazing!",
+        "author": "Sarah K.",
+        "avatar": "S"
+      },
+      {
+        "text": "Finally a premium streaming experience!",
+        "author": "Mike R.",
+        "avatar": "M"
+      }
+    ]
+  },
+  "trustBadges": {
+    "enabled": true,
+    "items": [
+      {"icon": "shield_check", "label": "Secure Payment"},
+      {"icon": "refresh", "label": "Cancel Anytime"},
+      {"icon": "verified", "label": "30-Day Guarantee"}
+    ]
+  },
+  "planBadges": {
+    "weekly": null,
+    "monthly": "POPULAR",
+    "lifetime": "BEST VALUE"
+  },
+  "savings": {
+    "weekly": null,
+    "monthly": null,
+    "lifetime": "SAVE 80%"
+  },
+  "features": [
+    {"icon": "block", "label": "No Ads", "benefit": "Uninterrupted streaming"},
+    {"icon": "hd", "label": "4K Quality", "benefit": "Crystal clear video"},
+    {"icon": "speed", "label": "Fast Loading", "benefit": "Optimized performance"},
+    {"icon": "play_circle", "label": "All Channels", "benefit": "Unlimited access"},
+    {"icon": "movie", "label": "VOD content", "benefit": "Watch Movies/series"},
+    {"icon": "support_agent", "label": "Priority Support", "benefit": "24/7 assistance"}
+  ],
+  "links": {
+  "termsUrl": "https://xozryp.github.io/ktlmaplayer/terms",
+  "privacyUrl": "https://xozryp.github.io/ktlmaplayer/privacy",
+  "eulaUrl": "https://xozryp.github.io/ktlmaplayer/terms"
+  },
+  "revenueCat": {
+    "enabled": true,
+    "ios_api_key": "appl_psUMRxLtZk",
+    "android_api_key": "YOUR_REVENUECAT_ANDROID_API_KEY",
+    "products": {
+      "weekly": "com..premium.Weekly",
+      "monthly": "com..premium.Monthly",
+      "yearly": "",
+      "lifetime": "com..pro.lifetime"
+    },
+    "offerings": {
+      "default": "APlayer",
+      "discounted": "discounted",
+      "onboarding": "onboarding_special",
+      "winback": "winback"
+    },
+    "entitlements": {
+      "premium": "APlayer Pro",
+      "pro": "APlayer Pro"
+    }
+  }
+}
