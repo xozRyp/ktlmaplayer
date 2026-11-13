@@ -1,7 +1,7 @@
 
 {
   "version": "1.0",
-  "customizedPaywall": false,
+  "customizedPaywall": true,
   "media": {
     "type": "image",
     "url": "",
