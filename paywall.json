@@ -93,7 +93,7 @@
   },
   "revenueCat": {
     "enabled": true,
-    "ios_api_key": "test_XefKvUBwTOFneEYmQFkAHxlDRzz",
+    "ios_api_key": "appl_lifzytDnXMxwTSxUKftdpmUREWA",
     "android_api_key": "YOUR_REVENUECAT_ANDROID_API_KEY",
     "products": {
       "weekly": "com.ktlmaPlayer.premium.Weekly",
@@ -102,14 +102,14 @@
       "lifetime": "com.ktlmaPlayer.pro.lifetime"
     },
     "offerings": {
-      "default": "APlayer",
+      "default": "default",
       "discounted": "discounted",
       "onboarding": "onboarding_special",
       "winback": "winback"
     },
     "entitlements": {
-      "premium": "APlayer Pro",
-      "pro": "APlayer Pro"
+      "premium": "ktlma_player_pro",
+      "pro": "ktlma_player_pro"
     }
   }
 }
