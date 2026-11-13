@@ -93,7 +93,7 @@
   },
   "revenueCat": {
     "enabled": true,
-    "ios_api_key": "test_XefKvUBwTOFneEYmQFkAHxlDRzz",
+    "ios_api_key": "appl_lifzytDnXMxwTSxUKftdpmUREWA",
     "android_api_key": "YOUR_REVENUECAT_ANDROID_API_KEY",
     "products": {
       "weekly": "com.ktlmaPlayer.premium.Weekly",
