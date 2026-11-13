@@ -99,7 +99,7 @@
       "weekly": "com.ktlmaPlayer.premium.Weekly",
       "monthly": "com.ktlmaPlayer.premium.Monthly",
       "yearly": "",
-      "lifetime": "com..pro.lifetime"
+      "lifetime": "com.ktlmaPlayer.pro.lifetime"
     },
     "offerings": {
       "default": "APlayer",
